@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Delta to Star transformation
+        </title>
+       
+        <link rel="stylesheet" href="style.css">
+
+        <script>
+            function calculate()
+            {
+                var R12=parseFloat( document.getElementById("R12").value)
+                var R23=parseFloat( document.getElementById("R23").value)
+                var R31=parseFloat( document.getElementById("R31").value)
+
+                R1=(R12*R31)/(R12+R23+R31)
+                R2=(R23*R12)/(R12+R23+R31)
+                R3=(R31*R23)/(R12+R23+R31)
+
+                if(!isNaN(R1)){document.getElementById("R1").innerHTML="R1= "+R1}
+                if(!isNaN(R2)){document.getElementById("R2").innerHTML="R2= "+R2}
+                if(!isNaN(R3)){document.getElementById("R3").innerHTML="R3= "+R3}
+
+            }
+        </script>
+    
+    </head>
+
+    <body>
+        <img src="DeltaStar.jpg">
+        
+        <p >R12: <input id="R12"> ohm
+        </p>
+        <p >R23: <input id="R23"> ohm
+        </p>
+        <p >R31: <input id="R31"> ohm
+        </p>
+
+        <button onclick="calculate()" class="btn">CALCULATE</button>
+        
+        <p id="R1"></p>
+        <p id="R2"></p>
+        <p id="R3"></p>
+    </body>
+</html>
